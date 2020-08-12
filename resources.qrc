@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/config.json</file>
+        <file>qml/Main.qml</file>
+        <file>assets/classifiers/haarcascade_frontalface_default.xml</file>
+        <file>assets/images/icons/alien.png</file>
+        <file>assets/images/icons/cartoon.png</file>
+        <file>assets/images/icons/martian.png</file>
+        <file>assets/images/icons/painting.png</file>
+        <file>assets/images/icons/scary.png</file>
+        <file>assets/images/icons/sketch.png</file>
+        <file>assets/images/icons/switch_camera.png</file>
+    </qresource>
+</RCC>
