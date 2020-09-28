@@ -1,7 +1,6 @@
 #include <QApplication>
 #include <FelgoApplication>
 #include <QQmlApplicationEngine>
-#include <QSplashScreen>
 
 #include "cnfilter.h"
 #include "cnvideo.h"

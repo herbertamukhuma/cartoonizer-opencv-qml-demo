@@ -21,8 +21,10 @@ SOURCES += main.cpp \
     cartoonifier.cpp \
     cnfilter.cpp \
     cnvideo.cpp
+# Uncomment this if you choose to use the pre-complied OpenCV binaries provided with this tutorial
+# INCLUDEPATH += C:/opencv/build/include
 
-INCLUDEPATH += C:/opencv/build/include
+INCLUDEPATH += C:/opencv/build/opencv-4.4.0/install/include
 
 android {
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
@@ -30,8 +32,12 @@ android {
 
     equals(ANDROID_TARGET_ARCH,armeabi-v7a) {
 
-        LIBS += -LC:/opencv/build/android/arch-arm/install/sdk/native/staticlibs/armeabi-v7a \
-                -LC:/opencv/build/android/arch-arm/install/sdk/native/3rdparty/libs/armeabi-v7a
+#        Uncomment this if you choose to use the pre-complied OpenCV binaries provided with this tutorial
+#        LIBS += -LC:/opencv/build/android/arch-arm/install/sdk/native/staticlibs/armeabi-v7a \
+#                -LC:/opencv/build/android/arch-arm/install/sdk/native/3rdparty/libs/armeabi-v7a
+
+        LIBS += -LC:/opencv/build/opencv-4.4.0-armeabi-v7a/install/sdk/native/staticlibs/armeabi-v7a \
+                -LC:/opencv/build/opencv-4.4.0-armeabi-v7a/install/sdk/native/3rdparty/libs/armeabi-v7a
 
         LIBS += -lopencv_imgproc \
                 -lopencv_objdetect \
@@ -61,12 +67,19 @@ ios {
 win32 {
     RC_FILE += win/app_icon.rc
 
-    LIBS += -LC:/opencv/build/x86/mingw/lib
+#   Uncomment this if you choose to use the pre-complied OpenCV binaries provided with this tutorial
+#   LIBS += -LC:/opencv/build/x86/mingw/lib
+#    LIBS +=  -lopencv_core410 \
+#             -lopencv_imgproc410 \
+#             -lopencv_objdetect410 \
+#             -lopencv_imgcodecs410
 
-    LIBS +=  -lopencv_core410 \
-             -lopencv_imgproc410 \
-             -lopencv_objdetect410 \
-             -lopencv_imgcodecs410
+    LIBS += -LC:/opencv/build/opencv-4.4.0/lib
+
+    LIBS +=  -lopencv_core440 \
+             -lopencv_imgproc440 \
+             -lopencv_objdetect440 \
+             -lopencv_imgcodecs440
 }
 macx {
     ICON = macx/app_icon.icns

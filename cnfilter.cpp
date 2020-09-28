@@ -117,9 +117,7 @@ QVideoFrame CNFilterRunnable::run(QVideoFrame *input, const QVideoSurfaceFormat 
 
     if(unfinishedThreads >= filter->WORKER_THREAD_COUNT){
         return * input;
-    }
-
-    filter->isProcessing = true;
+    }    
 
     QImage image = filter->videoFrameToImage(input);
     filter->workerThreads[counter] = QtConcurrent::run(this, &CNFilterRunnable::preprocessImage, image);
@@ -157,9 +155,7 @@ void CNFilterRunnable::preprocessImage(QImage image)
         emit filter->cartoonifiedImageDataReady(data);
     }else {
         qWarning() << "Invalid image....";
-    }
-
-    //filter->isProcessing = false;
+    }    
 
 }
 
